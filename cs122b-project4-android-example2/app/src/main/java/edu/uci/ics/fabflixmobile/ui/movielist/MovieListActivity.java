@@ -12,10 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import edu.uci.ics.fabflixmobile.R;
-import edu.uci.ics.fabflixmobile.data.model.Genre;
 import edu.uci.ics.fabflixmobile.data.model.Movie;
-import edu.uci.ics.fabflixmobile.data.model.Star;
-import edu.uci.ics.fabflixmobile.ui.login.SearchActivity;
+import edu.uci.ics.fabflixmobile.ui.search.SearchActivity;
 
 import java.util.ArrayList;
 
@@ -35,7 +33,7 @@ public class MovieListActivity extends AppCompatActivity {
 
         // Example: Log the search query
         Log.d("MovieList", "Search Query: " + searchQuery);
-        message.setText(searchQuery);
+//        message.setText(searchQuery);
         message.setText(searchResponse);
         final ArrayList<Movie> movies = new ArrayList<>();
 //        Movie(String name, short year, String id, String director, ArrayList< Star > stars, ArrayList< Genre > genres)

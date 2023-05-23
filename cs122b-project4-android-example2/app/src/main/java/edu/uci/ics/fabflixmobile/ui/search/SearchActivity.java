@@ -1,4 +1,4 @@
-package edu.uci.ics.fabflixmobile.ui.login;
+package edu.uci.ics.fabflixmobile.ui.search;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,11 +13,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import edu.uci.ics.fabflixmobile.R;
 import edu.uci.ics.fabflixmobile.data.NetworkManager;
-import edu.uci.ics.fabflixmobile.databinding.ActivityLoginBinding;
 import edu.uci.ics.fabflixmobile.databinding.ActivitySearchBinding;
 import edu.uci.ics.fabflixmobile.ui.movielist.MovieListActivity;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -39,7 +36,7 @@ public class SearchActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivitySearchBinding binding = ActivitySearchBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_search);
+        setContentView(binding.getRoot());
 
         searchbox = binding.searchbox;
         message = binding.message;
@@ -64,7 +61,9 @@ public class SearchActivity extends AppCompatActivity {
                     // TODO: should parse the json response to redirect to appropriate functions
                     //  upon different response value.
                     Log.d("search.success", response);
-
+//                    message.setText("Trying to search: " + searchQuery);
+//                    message.setText("Trying to search: " + response);
+//                    finish();
                     // Pass the search query and response to the MovieListActivity
                     Intent movieListIntent = new Intent(SearchActivity.this, MovieListActivity.class);
                     movieListIntent.putExtra("searchQuery", searchQuery);
